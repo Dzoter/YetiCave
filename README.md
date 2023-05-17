@@ -1,3 +1,0 @@
-# YetiCave
-YetiCave
-NewProject

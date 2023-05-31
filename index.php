@@ -3,6 +3,17 @@ $is_auth = rand(0, 1);
 
 $user_name = 'Рамазан'; // укажите здесь ваше имя
 
+function formatPrice($num): string
+{
+    $num = ceil($num);
+
+    if($num > 1000){
+        $num = number_format($num, 0, ".", " ");
+    }
+
+    return "{$num}₽";
+}
+
 $categories = [
     "boards" => "Доски и лыжи",
     "attachment" => "Крепления",
@@ -129,7 +140,7 @@ $catalogs = [
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?=$catalogName["price"];?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=formatPrice($catalogName["price"]);?></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23

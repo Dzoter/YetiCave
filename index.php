@@ -54,42 +54,42 @@ $catalogs = [
         "category" => $categories["boards"],
         "price" => 10999,
         "image" => "img/lot-1.jpg",
-        "expiration" => "2023-07-10"
+        "expiration" => "2023-06-13"
     ],
     [
         "title" => "DC Ply Mens 2016/2017 Snowboard",
         "category" => $categories["boards"],
         "price" => 159999,
         "image" => "img/lot-2.jpg",
-        "expiration" => "2023-07-04"
+        "expiration" => "2023-06-13"
     ],
     [
         "title" => "Крепления Union Contact Pro 2015 года размер L/XL",
         "category" => $categories["attachment"],
         "price" => 8000,
         "image" => "img/lot-3.jpg",
-        "expiration" => "2023-08-04"
+        "expiration" => "2023-06-14"
     ],
     [
         "title" => "Ботинки для сноуборда DC Mutiny Charocal",
         "category" => $categories["boots"],
         "price" => 10999,
         "image" => "img/lot-4.jpg",
-        "expiration" => "2023-08-01"
+        "expiration" => "2023-06-14"
     ],
     [
         "title" => "Куртка для сноуборда DC Mutiny Charocal",
         "category" => $categories["clothing"],
         "price" => 7500,
         "image" => "img/lot-5.jpg",
-        "expiration" => "2023-08-08"
+        "expiration" => "2023-06-13"
     ],
     [
         "title" => "Маска Oakley Canopy",
         "category" => $categories["other"],
         "price" => 5400,
         "image" => "img/lot-6.jpg",
-        "expiration" => "2023-08-10"
+        "expiration" => "2023-06-13"
     ],
 ];
 
@@ -99,6 +99,8 @@ $pageContent = include_template("main.php", [
 ]);
 
 $layoutContent = include_template("layout.php", [
+    "is_auth" => $is_auth,
+    "user_name" => $user_name,
     "content" => $pageContent,
     "categories" => $categories,
     "titleName" => "Главная"

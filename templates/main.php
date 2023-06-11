@@ -39,7 +39,7 @@
                             <span class="lot__cost"><?= formatPrice(htmlspecialchars($catalogName["price"])); ?></span>
                         </div>
                         <?php $res = getTimeLeft(htmlspecialchars($catalogName["expiration"])) ?>
-                        <div class="lot__timer timer><?php if ($res[0] < 1 ) : ?>timer--finishing<?php endif; ?>">
+                        <div class="lot__timer timer<?php if ($res[0] < 1 ) : ?>timer--finishing<?php endif; ?>">
                             <?= "$res[0]: $res[1]"; ?>
                         </div>
                     </div>

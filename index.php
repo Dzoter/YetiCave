@@ -32,10 +32,11 @@ function getTimeLeft($data): array //$data - время истечения сл�
     $hours = str_pad($hours, 2, "0", STR_PAD_LEFT);
     $minutes = str_pad($minutes, 2, "0", STR_PAD_LEFT);
 
-    $res[] = $hours;
-    $res[] = $minutes;
 
-    return $res;
+    return [
+        "hours" => $hours,
+        "minutes" => $minutes
+    ];
 
 }
 
@@ -54,7 +55,7 @@ $catalogs = [
         "category" => $categories["boards"],
         "price" => 10999,
         "image" => "img/lot-1.jpg",
-        "expiration" => "2023-06-13"
+        "expiration" => "2023-06-12 17:30"
     ],
     [
         "title" => "DC Ply Mens 2016/2017 Snowboard",

@@ -10,8 +10,8 @@
 
     <ul class="promo__list">
         <!--заполните этот список из массива категорий-->
-        <?php foreach ($categories as $сategory => $categoryName): ?>
-            <li class="promo__item promo__item--<?= $сategory; ?>">
+        <?php foreach ($categories as $category => $categoryName): ?>
+            <li class="promo__item promo__item--<?= $category; ?>">
                 <a class="promo__link" href="pages/all-lots.html"><?= $categoryName; ?></a>
             </li>
         <?php endforeach; ?>
@@ -38,9 +38,9 @@
                             <span class="lot__amount">Стартовая цена</span>
                             <span class="lot__cost"><?= formatPrice(htmlspecialchars($catalogName["price"])); ?></span>
                         </div>
-                        <?php $res = getTimeLeft(htmlspecialchars($catalogName["expiration"])) ?>
-                        <div class="lot__timer timer<?php if ($res[0] < 1 ) : ?>timer--finishing<?php endif; ?>">
-                            <?= "$res[0]: $res[1]"; ?>
+                        <?php getTimeLeft(htmlspecialchars($catalogName["expiration"])) ?>
+                        <div class="lot__timer timer <?php if (getTimeLeft(htmlspecialchars($catalogName["expiration"]))["hours"] < 1 ) : ?>timer--finishing<?php endif; ?>">
+                            <?= getTimeLeft(htmlspecialchars($catalogName["expiration"]))["hours"] . ":" . getTimeLeft(htmlspecialchars($catalogName["expiration"]))["minutes"] ?>
                         </div>
                     </div>
                 </div>
